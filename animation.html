@@ -1,0 +1,68 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <style>
+    .redDiv {
+    background-color: red;
+    height: 600px;
+    width: 500px;
+    }
+    .blueDiv {
+    background-color: blue;
+    height: 300px;
+    width: 500px;
+    }
+    </style>
+    <script>
+    $(document).ready(function () 
+    {
+    $('#myDiv1').animate({height: '200px',width: '200px'},
+    
+    { // options parameter
+    duration: 5000,
+    complete: function ()
+    {
+    $(this).animate({height: '100px',width: '100px'}, 5000,
+    function () 
+    {
+        $('#msgDiv1').text('Animation completed..');
+    });
+    },
+    start: function () 
+    {
+        $('#msgDiv1').append('starting animation..');
+    }
+    });
+    });
+
+
+    $(document).ready(function () 
+    {
+    $('#myDiv2').animate({height: '200px',width: '200px'},
+    
+    { // options parameter
+    duration: 5000,
+    complete: function ()
+    {
+    $(this).animate({height: '100px',width: '100px'}, 5000,
+    function () 
+    {
+        $('#msgDiv2').text('Animation completed..');
+    });
+    },
+    start: function () 
+    {
+        $('#msgDiv2').append('starting animation..');
+    }
+    });
+    });
+    </script>
+    </head>
+    <body>
+    <h1>Div animation</h1>
+    
+    <div id="myDiv1" class="redDiv"></div>
+    <br>
+    <div id="myDiv2" class="blueDiv"></div>
+    </body>
+    </html>
